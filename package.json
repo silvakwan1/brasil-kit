@@ -1,6 +1,6 @@
 {
   "name": "brasil-kit",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "Utilitários para dados brasileiros — CPF, CNPJ, CEP, telefone. Validação, formatação e geração.",
   "type": "module",
   "publishConfig": {
