@@ -103,6 +103,17 @@ currency.format(1500.50, { symbol: false }); // "1.500,50"
 // Parsing (string para número)
 currency.parse("R$ 1.500,50"); // 1500.5
 currency.parse("1.500,50"); // 1500.5
+
+// Conversão e arredondamento seguro para Decimal (float de 2 casas)
+currency.toDecimal("R$ 1.500,505"); // 1500.51
+currency.toDecimal(0.1 + 0.2); // 0.3
+
+// Cálculos matemáticos sem erros de ponto flutuante
+currency.sum(0.1, 0.2); // 0.3
+currency.sum("R$ 1.500,50", "500,00", 200); // 2200.5
+
+currency.subtract("R$ 1.500,50", "500,50"); // 1000
+currency.subtract(0.3, 0.2); // 0.1
 ```
 
 ### Data (Date)
@@ -164,6 +175,9 @@ date.parseISO("2026-07-14T15:30:00Z"); // Objeto Date a partir de string ISO
 |---|---|
 | `format(value: number, options?: FormatOptions): string` | Formata número para real brasileiro |
 | `parse(value: string): number` | Converte string monetária formatada para número |
+| `toDecimal(value: number \| string): number` | Converte com precisão um número/string em float de 2 casas |
+| `sum(...values: (number \| string)[]): number` | Soma múltiplos valores (número/string) de forma segura |
+| `subtract(a: number \| string, b: number \| string): number` | Subtrai de forma segura dois valores (número/string) |
 
 ### `date`
 
