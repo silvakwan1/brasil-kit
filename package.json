@@ -36,7 +36,9 @@
     "format": "biome format --write ./src ./tests",
     "check": "biome check ./src ./tests && tsc --noEmit",
     "prepublishOnly": "npm run lint && npm run test && npm run build",
-    "release": "changeset publish"
+    "release": "changeset publish",
+    "changeset:add": "changeset",
+    "changeset:commit": "git add .changeset/* && git commit -m \"chore: adicionar changeset para novas alteracoes\""
   },
   "keywords": [
     "brasil",
