@@ -26,6 +26,8 @@ Utilitários para dados brasileiros — **CPF, CNPJ, CEP, telefone**. Validaçã
 
 ## Instalação
 
+Disponível no [npm registry](https://www.npmjs.com/package/brasil-kit).
+
 ```bash
 npm install brasil-kit
 ```

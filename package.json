@@ -59,7 +59,7 @@
   "bugs": {
     "url": "https://github.com/silvakwan1/brasil-kit/issues"
   },
-  "homepage": "https://github.com/silvakwan1/brasil-kit#readme",
+  "homepage": "https://www.npmjs.com/package/brasil-kit",
   "devDependencies": {
     "@biomejs/biome": "^1.9.0",
     "@changesets/cli": "^2.27.0",
