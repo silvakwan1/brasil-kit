@@ -26,17 +26,16 @@ jobs:
         with:
           node-version: 20
           cache: "npm"
-          registry-url: "https://npm.pkg.github.com"
-          scope: "@silvakwan1"
+          registry-url: "https://registry.npmjs.org"
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Create Release Pull Request or Publish to GitHub Packages
+      - name: Create Release Pull Request or Publish to NPM
         id: changesets
         uses: changesets/action@v1
         with:
           publish: npm run release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
