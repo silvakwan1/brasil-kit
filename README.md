@@ -9,7 +9,7 @@
     <img src="https://img.shields.io/npm/v/brasil-kit.svg" alt="versão npm" />
   </a>
   <a href="https://github.com/silvakwan1/brasil-kit/actions/workflows/ci.yml">
-    <img src="https://github.com/silvakwan1/brasil-kit/actions/workflows/ci.yml/badge.svg" alt="CI Status" />
+    <img src="https://img.shields.io/github/actions/workflow/status/silvakwan1/brasil-kit/ci.yml?branch=main" alt="CI Status" />
   </a>
   <a href="https://opensource.org/licenses/MIT">
     <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="Licença MIT" />
