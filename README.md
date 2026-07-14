@@ -147,6 +147,7 @@ date.parseISO("2026-07-14T15:30:00Z"); // Objeto Date a partir de string ISO
 
 ### `cnpj`
 
+| Função | Descrição |
 |---|---|
 | `validate(cnpj: string): boolean` | Valida CNPJ (com/sem máscara) |
 | `format(cnpj: string): string` | Formata para `XX.XXX.XXX/XXXX-XX` |
