@@ -93,6 +93,36 @@ phone.format("1134567890"); // "(11) 3456-7890"
 phone.strip("(11) 98765-4321"); // "11987654321"
 ```
 
+### Valores Monetários (Currency)
+
+```typescript
+// Formatação
+currency.format(1500.50); // "R$ 1.500,50"
+currency.format(1500.50, { symbol: false }); // "1.500,50"
+
+// Parsing (string para número)
+currency.parse("R$ 1.500,50"); // 1500.5
+currency.parse("1.500,50"); // 1500.5
+```
+
+### Data (Date)
+
+```typescript
+// Validação (formato brasileiro DD/MM/YYYY)
+date.isValid("14/07/2026"); // true
+date.isValid("29/02/2026"); // false (ano não bissexto)
+
+// Formatação
+date.format(new Date(2026, 6, 14)); // "14/07/2026"
+date.format("2026-07-14T15:30:00Z"); // "14/07/2026" (Aceita strings ISO!)
+date.format("2026-07-14T15:30:00Z", { includeTime: true }); // "14/07/2026 12:30" (conversão para hora local)
+
+// Parsing (string para objeto Date)
+date.parse("14/07/2026"); // Objeto Date
+date.parse("14/07/2026 15:30"); // Objeto Date com hora e minuto
+date.parseISO("2026-07-14T15:30:00Z"); // Objeto Date a partir de string ISO
+```
+
 ## API
 
 ### `cpf`
@@ -106,7 +136,6 @@ phone.strip("(11) 98765-4321"); // "11987654321"
 
 ### `cnpj`
 
-| Função | Descrição |
 |---|---|
 | `validate(cnpj: string): boolean` | Valida CNPJ (com/sem máscara) |
 | `format(cnpj: string): string` | Formata para `XX.XXX.XXX/XXXX-XX` |
@@ -128,6 +157,22 @@ phone.strip("(11) 98765-4321"); // "11987654321"
 | `validate(phone: string): boolean` | Valida telefone (fixo/celular) |
 | `format(phone: string): string` | Formata para `(XX) XXXX-XXXX` ou `(XX) XXXXX-XXXX` |
 | `strip(phone: string): string` | Remove formatação |
+
+### `currency`
+
+| Função | Descrição |
+|---|---|
+| `format(value: number, options?: FormatOptions): string` | Formata número para real brasileiro |
+| `parse(value: string): number` | Converte string monetária formatada para número |
+
+### `date`
+
+| Função | Descrição |
+|---|---|
+| `isValid(dateStr: string): boolean` | Valida se a string é uma data DD/MM/YYYY válida |
+| `format(date: Date \| string, options?: DateFormatOptions): string` | Formata Date ou string ISO para DD/MM/YYYY ou com hora |
+| `parse(dateStr: string): Date` | Converte string DD/MM/YYYY ou com hora em Date |
+| `parseISO(isoStr: string): Date` | Converte string ISO 8601 em Date |
 
 ## Licença
 
