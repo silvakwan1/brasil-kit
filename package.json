@@ -1,8 +1,11 @@
 {
-  "name": "brasil-kit",
+  "name": "@silvakwan1/brasil-kit",
   "version": "1.1.1",
   "description": "Utilitários para dados brasileiros — CPF, CNPJ, CEP, telefone. Validação, formatação e geração.",
   "type": "module",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
